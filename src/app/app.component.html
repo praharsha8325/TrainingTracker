@@ -1,0 +1,11 @@
+<body>
+    <app-header></app-header>
+    <div [ngClass]="courseService.getSideBar() ? 'main-body' : ''">
+        <app-sidebar class="sideBar"></app-sidebar>
+        <router-outlet></router-outlet>
+    </div>
+    <div [ngClass]="trainingService.getSideBar() ? 'main-body' : ''">
+        <app-sidebar class="sideBar"></app-sidebar>
+        <router-outlet></router-outlet>
+    </div>
+</body>

@@ -1,0 +1,17 @@
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Roboto:wght@100;400&display=swap" rel="stylesheet">
+<div [ngClass]="!courseService.getSideBar() ? 'sidebar' : 'sidebar sidebar-open'">
+    <div class="sidebar-header">
+        <h1 class="sidebar-title">virtusa</h1>
+        <span class="glyphicon glyphicon-menu-left icon" (click)="courseService.closeSideBar()"></span>
+    </div>
+    <ul class="sidebar-menu">
+        <li routerLinkActive="active"><a routerLink="/courses" ><i class='fas fa-chalkboard-teacher'></i>Courses</a></li>
+        <li routerLinkActive="active"><a routerLink="/trainings"><i class='fas fa-laptop-code'></i>Trainings</a></li>
+        <li routerLinkActive="active"><a routerLink="/nominations"><i class="fas fa-award"></i>Nominations</a></li>
+        <li routerLinkActive="active"><a routerLink="/reportgeneration"><i class="fa fa-bar-chart"></i>Reports</a></li>
+        <li routerLinkActive="active"><a routerLink="/attendance"><i class="fa fa-group"></i>Attendance</a></li>
+        <li routerLinkActive="active"><a routerLink="/assignments"><i class="fa fa-pencil-square"></i>Assignment</a></li>
+    </ul>
+</div>

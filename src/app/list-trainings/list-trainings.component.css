@@ -1,0 +1,138 @@
+.table-container{
+    width: 90%;
+    margin: 0 auto;
+    margin-top: 30px;
+    display: flex;
+    flex-direction: column;
+}
+
+.title{
+    text-align: center;
+    color: white;
+    text-transform: uppercase;
+    letter-spacing: 3px;
+    font-size: 40px;
+    font-weight: bold;
+    font-family: 'Courier New', Courier, monospace;
+    margin-top: 50px;
+}
+.btn-group{
+    margin-bottom: 20px;
+}
+
+
+.divider{
+    width:150px;
+    height:4px;
+    margin:0 auto;
+    background-color: white;
+}
+
+.btn-s{
+    padding: 7px 10px;
+    margin-right: 10px;
+    border-radius: 10px;
+    border: none;
+    background-color:#05386B;
+    color: white;
+    font-size: 16px;
+    font-family: 'Courier New', Courier, monospace;
+    font-weight: bold;
+    width: 150px;
+    letter-spacing: 1px;
+}
+
+.btn-s:hover{
+    background-color: #1a528a;
+}
+
+.btn-add-training{
+    float: right;
+}
+input:focus {
+    outline:none;
+}
+
+::placeholder{
+    color:white;
+    letter-spacing: 1px;
+}
+
+table {
+  border-collapse: collapse;
+  border-radius: 1em;
+  overflow: hidden;
+}
+th{
+    padding: 1em;
+    background-color: #05386B;
+    color: white;
+    font-size: 16px;
+    letter-spacing: 0.7px;
+    text-align: center;
+}
+td {
+  padding: 1em;
+  background-color: white;
+  color: #05386B;
+  border-top: 1px solid #05386B; 
+  text-align: center;
+  font-size: 14px;
+}
+
+
+
+.add-training-link{
+    text-decoration: none;
+    color:white;
+}
+
+
+
+.btn-container{
+    display:flex;
+    align-items: center;
+    justify-content: space-evenly;
+    margin-top: 20px;
+}
+
+.page-btn{
+    background-color: #05386B;
+    color: white;
+    border: none;
+    font-size: 16px;
+    padding:5px 10px;
+    border-radius: 3px;
+}
+
+.active{
+    background-color: white;
+    color:#05386B;
+}
+.dots{
+    font-size: 40px;
+    letter-spacing: 3px;
+}
+/* .pagination{
+    margin: 0 auto;
+    margin-top: 20px;
+    font-size: 20px;
+    padding: 5px;
+   
+}
+
+
+
+.ngx-pagination .current,
+.btn-info {
+  background: #17a2b8 !important;
+  border: transparent !important;
+  border-radius: 20px !important;
+  color:#05386B !important;
+}
+
+.ngx-pagination .current:hover {
+  background: #17a2b8 !important;
+  border-radius: 20px !important; 
+  border: transparent !important;
+} */

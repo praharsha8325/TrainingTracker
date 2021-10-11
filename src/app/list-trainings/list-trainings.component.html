@@ -1,0 +1,76 @@
+<div class="main-container">
+    <h1 class="title">
+        TRAININGS
+    </h1>
+    <div class="divider"></div>
+    <div class="table-container">
+        <div class="btn-group">
+            <input type="text" [(ngModel)]="searchTerm" class="btn-s" name="searchTerm" placeholder="Search...">
+            <button class="btn-s btn-add-training"><a class="add-training-link" routerLink="/add-training">Add
+                    Training</a></button>
+        </div>
+        <table class="tab">
+            <tr>
+                <th>S No</th>
+                <th *ngFor="let col of columns" (click)="sortColumn = col[0]">{{col[1]}}
+                    <span class="glyphicon glyphicon-arrow-up " (click)="direction = 'asc' "></span>
+                    <span class="glyphicon glyphicon-arrow-down" (click)="direction = 'desc' "></span>
+                </th>
+                <th>Action</th>
+            </tr>
+
+            <!-- <tr *ngFor="let training of trainings | filter : searchTerm | sort : sortColumn : direction | paginate: { itemsPerPage: itemsPerPage, currentPage: currentPage }; let i = index;">
+    
+                <td>{{itemsPerPage * (currentPage - 1) + i + 1}}</td>
+                <ng-container *ngFor="let col of columns">
+                    <td *ngIf="checkHandsOn(col[0]); else Others">{{training[col[0]] ? 'Yes': 'No'}}</td>
+                    <ng-template #Others>
+                        <td>{{training[col[0]]}}</td>
+                    </ng-template>
+                </ng-container>
+                <td><a [routerLink]="['/edit-training',training['trainingId']]"><span class="glyphicon glyphicon-edit"></span></a></td>
+            </tr> -->
+            <tr
+                *ngFor="let training of trainings | filter : searchTerm | sort : sortColumn : direction ; let i = index;">
+                <ng-container
+                    *ngIf="i >= currentPage * itemsPerPage && i < (currentPage * itemsPerPage + itemsPerPage)">
+                    <td>{{i+1}}</td>
+                    <ng-container *ngFor="let col of columns">
+                        <!-- <td *ngIf="checkHandsOn(col[0]); else Others">{{training[col[0]] ? 'Yes': 'No'}}</td> -->
+                        <ng-template #Others>
+                            <td>{{training[col[0]]}}</td>
+                        </ng-template>
+                    </ng-container>
+                    <td><a [routerLink]="['/edit-training',training['trainingId']]"><span
+                                class="glyphicon glyphicon-edit"></span></a></td>
+                </ng-container>
+
+            </tr>
+        </table>
+        <!-- <pagination-controls class="pagination" (pageChange)="currentPage = $event"></pagination-controls> -->
+
+        <div class="btn-container">
+            <button type="button" class="btn-s" (click)="handlePrev()">Prev</button>
+
+            <ng-container *ngIf="pages <= 15; else morePages">
+                <ng-container *ngFor="let val of pages|iterate">
+                    <button type="button" (click)="setCurrentPage(val)" [ngClass]="isCurrentPage(val-1) ? 'page-btn active':'page-btn' ">{{val}}</button>
+                </ng-container>
+            </ng-container>
+            <ng-template #morePages>
+                <ng-container *ngFor="let val of 6|iterate">
+                    <button *ngIf="currentPage+val <= pages-6" type="button" class="page-btn"
+                        (click)="setCurrentPage(currentPage+val)">{{currentPage+val}}</button>
+                </ng-container>
+                <p class="dots">...</p>
+                <ng-container *ngFor="let val of 6|iterate">
+                    <button type="button" class="page-btn"
+                        (click)="setCurrentPage(pages-(6-val))">{{pages-(6-val)}}</button>
+                </ng-container>
+            </ng-template>
+
+            <button type="button" class="btn-s" (click)="handleNext()">Next</button>
+        </div>
+    </div>
+
+</div>

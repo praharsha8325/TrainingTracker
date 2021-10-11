@@ -1,0 +1,13 @@
+body{
+    /* background-color: #d0d2a8; */
+    background-image: url('../assets/trainingTracker3.png');
+    background-repeat: no-repeat;
+    background-size: cover;
+    min-height: 100vh;
+}
+.main-body{
+    display: flex;
+}
+.sideBar{
+    width: 200px;
+}

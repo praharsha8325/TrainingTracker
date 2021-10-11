@@ -1,0 +1,137 @@
+<!-- <div class="container">
+    <input type="text" [(ngModel)]="searchTerm" name="searchTerm" placeholder="search...">
+    <table class="table table-bordered">
+        <thead>
+            <tr>
+                <th>Name
+                    <span id="nameAsc" class="glyphicon glyphicon-arrow-up" (click)="sortParams($event)"></span>
+                    <span id="nameDesc" class="glyphicon glyphicon-arrow-down" (click)="sortParams($event)"></span>
+                </th>
+                <th>Duration
+                    <span id="durationAsc" class="glyphicon glyphicon-arrow-up" (click)="sortParams($event)"></span>
+                    <span id="durationDesc" class="glyphicon glyphicon-arrow-down" (click)="sortParams($event)"></span>
+                </th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr *ngFor="let training of trainings | filter : searchTerm | sort : direction: column: type">
+                <td>{{training.name}}</td>
+                <td>{{training.duration}}</td>
+            </tr>
+        </tbody>
+    </table> -->
+    <!-- <table class="table table-bordered">
+        <thead>
+            <tr>
+                <th *ngFor="let col of columns">{{col.toUpperCase()}}</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr *ngFor="let training of trainings">
+                <td *ngFor="let col of columns">{{col}}</td>
+            </tr>
+        </tbody>
+    </table>
+</div> -->
+<<<<<<< HEAD
+ <!-- <div class="container">
+=======
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Roboto:wght@100;400&display=swap" rel="stylesheet">
+ <div class="container">
+>>>>>>> fa0d480251f0a27c05c648a6cc91074dc4189c9c
+    <h1 class="title">Add Training</h1>
+    <div class="divider"></div>
+    <form class="form" (ngSubmit)="onSubmit(f.value)" #f="ngForm">
+        <div class="form-group">
+            <label for="trainingTitle">Training Title:</label>
+            <input type="text" class="form-control" name="trainingTitle" id="trainingTitle" placeholder="Enter Training Name" ngModel>
+        </div>
+        <div class="form-group">
+            <label for="trainingId">Trainer ID :</label>
+            <input type="text" class="form-control" name="trainingId" id="trainingId" placeholder="Enter Trainer ID" ngModel>
+        </div>
+        <div class="form-group">
+            <label for="scheduledfrom">Scheduled :</label>
+            <div class="input-group">
+                <input type="date" name= "scheduledfrom" id = "scheduledfrom"class="form-control" placeholder="Start" ngModel/>
+                <span class="input-group-addon">-</span>
+                <input type="date" name= "scheduledto" id = "scheduledto" class="form-control" placeholder="End" ngModel/>
+            </div> -->
+        <!-- </div>
+        <div class="form-group">
+            <label for="hoursPerDay">Hours Per Day:</label>
+            <input type="number" class="form-control" name="hoursPerDay" id="hoursPerDay"
+                placeholder="Enter Hours Per Day" ngModel>
+        </div>
+        <div class="form-group">
+            <label for="from">Timings :</label>
+            <div class="input-group">
+                <input type="time" name= "from" id = "from" class="form-control" placeholder="Start" ngModel/>
+                <span class="input-group-addon">-</span>
+                <input type="time" name= "to" id = "to"class="form-control" placeholder="End" ngModel/>
+            </div>
+        </div>
+        <div class="text-center">
+            <button type="submit" class="btn btn-primary">Add Training</button>
+        </div>
+    </form>
+</div> -->
+<div class="container">
+    <h1 class="title">{{isEdit ? 'Edit Training' : 'Add Training'}}</h1>
+    <!-- <div class="divider"></div> -->
+    <form class="form" (ngSubmit)="isEdit ? onEdit(f.value) : onSubmit(f.value)" #f="ngForm">
+        <div class="form-group">
+            <label for="trainingTitle">Training Title:</label>
+            <input type="text" class="form-control" name="trainingTitle" id="trainingTitle" placeholder="Enter Training Name" [ngModel]="trainingData.title">
+        </div>
+        <!-- <div class="form-group">
+            <label for="duration">Scheduled From:</label>
+            <input type="text" class="form-control" name="duration" id="duration" placeholder="Enter Duration" [ngModel]="trainingData.durationDays">
+        </div> -->
+        <div class="form-group">
+            <label for="scheduledfrom">Scheduled :</label>
+            <div class="input-group">
+                <input type="date" name= "scheduledfrom" id = "scheduledfrom"class="form-control" placeholder="Start" ngModel/>
+                <span class="input-group-addon">-</span>
+                <input type="date" name= "scheduledto" id = "scheduledto" class="form-control" placeholder="End" ngModel/>
+            </div>
+            </div>
+        <!-- <div class="checkboxGroup"> 
+            <label><input type="checkbox" name="isTheory" ngModel> Theoretical</label>
+            <label><input type="checkbox" name="isHandsOn" [ngModel]="trainingData.handsOn"> Hands-on Lab</label>
+        </div> -->
+        <div class="form-group">
+            <label for="hoursPerDay">Hours Per Day:</label>
+            <input type="number" class="form-control" name="hoursPerDay" id="hoursPerDay"
+                placeholder="Enter Hours Per Day" [ngModel]="trainingData.theorySessionHoursPerDay">
+        </div>
+        <!-- <div class="form-group">
+            <label for="techStack">Tech Stack:</label>
+            <textarea  class="form-control" name="techStack" id="techStack" 
+            placeholder="Enter tech stack..." [ngModel]="trainingData.technologyStack"></textarea>
+        </div>
+        <div class="form-group">
+            <label for="preRequisites">Pre-requisites:</label>
+            <input type="text" class="form-control" name="preRequisites" id="preRequisites"
+                placeholder="Enter Pre-requisites" [ngModel]="trainingData.prerequisites">
+        </div> -->
+        <div class="form-group">
+            <label for="from">Timings :</label>
+            <div class="input-group">
+                <input type="time" name= "from" id = "from" class="form-control" placeholder="Start" ngModel/>
+                <span class="input-group-addon">-</span>
+                <input type="time" name= "to" id = "to"class="form-control" placeholder="End" ngModel/>
+            </div>
+        </div>
+        <div class="text-center">
+<<<<<<< HEAD
+            <button type="submit" class="btn btn-primary">{{isEdit ? 'Save Training' : 'Add Training'}}</button>
+            <button type="submit" class="btn btn-primary"><a class="back" routerLink="/trainings">Back</a></button>
+=======
+            <button type="submit" id="button1" class="btn btn-primary">Add Training</button>
+>>>>>>> fa0d480251f0a27c05c648a6cc91074dc4189c9c
+        </div>
+    </form>
+</div>

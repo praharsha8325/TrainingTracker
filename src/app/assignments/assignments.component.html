@@ -1,0 +1,37 @@
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Roboto:wght@100;400&display=swap" rel="stylesheet">
+<div class="container">
+    <h1 class="title">Assignments</h1>
+    <div class="divider"></div>
+
+    <form class="form">
+
+        <div class="form-group">
+            <label for="trainingTitle">Select Training:</label>
+            <select class="form-control" name="trainingTitle" id="trainingTitle" ngModel>
+                <option selected="selected">Training 1</option>
+                <option>Training 2</option>
+                <option>Training 3</option>
+            </select>
+        </div>
+
+        <div class="form-group">
+            <label for="assignmentTitle">Select Assignment:</label>
+            <select class="form-control" name="assignmentTitle" id="assignmentTitle" ngModel>
+                <option selected="selected">Assignment 1</option>
+                <option>Assignment 2</option>
+                <option>Assignment 3</option>
+            </select>
+        </div>
+
+        <div class="form-group">
+            <label for="assignment">Choose file:</label>
+            <input type="file" class="form-control" name="assignment" id="assignment" ngModel>
+        </div>
+
+        <div class="text-center">
+            <button type="submit" id="button3" class="btn btn-primary">Upload Assignment</button>
+        </div>
+    </form>
+</div>
